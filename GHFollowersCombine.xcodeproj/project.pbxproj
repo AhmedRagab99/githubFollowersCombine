@@ -43,7 +43,7 @@
 		43F4547DC684D3F57359D2D4 /* Pods_GHFollowersCombine_GHFollowersCombineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowersCombine_GHFollowersCombineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75D91697BC4DC6BE75942D0 /* Pods-GHFollowersCombineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowersCombineTests.release.xcconfig"; path = "Target Support Files/Pods-GHFollowersCombineTests/Pods-GHFollowersCombineTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE1E4002B2BFBB9CD73331E7 /* Pods_GHFollowersCombineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowersCombineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0A0FAC42505325200C06046 /* GHFollowersCombine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowersCombine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A0FAC42505325200C06046 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A0FAC72505325200C06046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0A0FAC92505325200C06046 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D0A0FACB2505325200C06046 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		D0A0FAC52505325200C06046 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0A0FAC42505325200C06046 /* GHFollowersCombine.app */,
+				D0A0FAC42505325200C06046 /* GHFollowers.app */,
 				D0A0FADA2505325300C06046 /* GHFollowersCombineTests.xctest */,
 				D0A0FAE52505325300C06046 /* GHFollowersCombineUITests.xctest */,
 			);
@@ -184,7 +184,7 @@
 			);
 			name = GHFollowersCombine;
 			productName = GHFollowersCombine;
-			productReference = D0A0FAC42505325200C06046 /* GHFollowersCombine.app */;
+			productReference = D0A0FAC42505325200C06046 /* GHFollowers.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D0A0FAD92505325300C06046 /* GHFollowersCombineTests */ = {
@@ -579,7 +579,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedRagab.GHFollowersCombine;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GHFollowers;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -598,7 +598,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedRagab.GHFollowersCombine;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GHFollowers;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
