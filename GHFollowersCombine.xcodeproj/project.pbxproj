@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24334E6A0B8951760987E2D1 /* Pods_GHFollowersCombine_GHFollowersCombineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F4547DC684D3F57359D2D4 /* Pods_GHFollowersCombine_GHFollowersCombineUITests.framework */; };
+		4AEF65033E7DE5F578BD397C /* Pods_GHFollowersCombineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1E4002B2BFBB9CD73331E7 /* Pods_GHFollowersCombineTests.framework */; };
+		C1E416DB6CCA1D3C1B3CC2E3 /* Pods_GHFollowersCombine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08AFEF15D193F2C2559A3C22 /* Pods_GHFollowersCombine.framework */; };
+		D0A0FAC82505325200C06046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A0FAC72505325200C06046 /* AppDelegate.swift */; };
+		D0A0FACA2505325200C06046 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A0FAC92505325200C06046 /* SceneDelegate.swift */; };
+		D0A0FACC2505325200C06046 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A0FACB2505325200C06046 /* ViewController.swift */; };
+		D0A0FAD12505325300C06046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A0FAD02505325300C06046 /* Assets.xcassets */; };
+		D0A0FAD42505325300C06046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A0FAD22505325300C06046 /* LaunchScreen.storyboard */; };
+		D0A0FADF2505325300C06046 /* GHFollowersCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A0FADE2505325300C06046 /* GHFollowersCombineTests.swift */; };
+		D0A0FAEA2505325300C06046 /* GHFollowersCombineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A0FAE92505325300C06046 /* GHFollowersCombineUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0A0FADB2505325300C06046 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0A0FABC2505325200C06046 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0A0FAC32505325200C06046;
+			remoteInfo = GHFollowersCombine;
+		};
+		D0A0FAE62505325300C06046 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0A0FABC2505325200C06046 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0A0FAC32505325200C06046;
+			remoteInfo = GHFollowersCombine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08AFEF15D193F2C2559A3C22 /* Pods_GHFollowersCombine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowersCombine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11D8D946F258D6EAC92DF4CD /* Pods-GHFollowersCombine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowersCombine.debug.xcconfig"; path = "Target Support Files/Pods-GHFollowersCombine/Pods-GHFollowersCombine.debug.xcconfig"; sourceTree = "<group>"; };
+		2FFDB0B78DF9D20E8AF193C9 /* Pods-GHFollowersCombineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowersCombineTests.debug.xcconfig"; path = "Target Support Files/Pods-GHFollowersCombineTests/Pods-GHFollowersCombineTests.debug.xcconfig"; sourceTree = "<group>"; };
+		43F4547DC684D3F57359D2D4 /* Pods_GHFollowersCombine_GHFollowersCombineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowersCombine_GHFollowersCombineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C75D91697BC4DC6BE75942D0 /* Pods-GHFollowersCombineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowersCombineTests.release.xcconfig"; path = "Target Support Files/Pods-GHFollowersCombineTests/Pods-GHFollowersCombineTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE1E4002B2BFBB9CD73331E7 /* Pods_GHFollowersCombineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowersCombineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A0FAC42505325200C06046 /* GHFollowersCombine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowersCombine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A0FAC72505325200C06046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0A0FAC92505325200C06046 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D0A0FACB2505325200C06046 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0A0FAD02505325300C06046 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0A0FAD32505325300C06046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0A0FAD52505325300C06046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A0FADA2505325300C06046 /* GHFollowersCombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GHFollowersCombineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A0FADE2505325300C06046 /* GHFollowersCombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowersCombineTests.swift; sourceTree = "<group>"; };
+		D0A0FAE02505325300C06046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A0FAE52505325300C06046 /* GHFollowersCombineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GHFollowersCombineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A0FAE92505325300C06046 /* GHFollowersCombineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowersCombineUITests.swift; sourceTree = "<group>"; };
+		D0A0FAEB2505325300C06046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF21AF05D3CDF0A1EF3FFDE7 /* Pods-GHFollowersCombine-GHFollowersCombineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowersCombine-GHFollowersCombineUITests.debug.xcconfig"; path = "Target Support Files/Pods-GHFollowersCombine-GHFollowersCombineUITests/Pods-GHFollowersCombine-GHFollowersCombineUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E411E379CA8C05FFCF07C9CE /* Pods-GHFollowersCombine-GHFollowersCombineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowersCombine-GHFollowersCombineUITests.release.xcconfig"; path = "Target Support Files/Pods-GHFollowersCombine-GHFollowersCombineUITests/Pods-GHFollowersCombine-GHFollowersCombineUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EAA6E8F8B0651BE8265CDC01 /* Pods-GHFollowersCombine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowersCombine.release.xcconfig"; path = "Target Support Files/Pods-GHFollowersCombine/Pods-GHFollowersCombine.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0A0FAC12505325200C06046 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1E416DB6CCA1D3C1B3CC2E3 /* Pods_GHFollowersCombine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A0FAD72505325300C06046 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AEF65033E7DE5F578BD397C /* Pods_GHFollowersCombineTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A0FAE22505325300C06046 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24334E6A0B8951760987E2D1 /* Pods_GHFollowersCombine_GHFollowersCombineUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00767A227019303C34B2F439 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08AFEF15D193F2C2559A3C22 /* Pods_GHFollowersCombine.framework */,
+				43F4547DC684D3F57359D2D4 /* Pods_GHFollowersCombine_GHFollowersCombineUITests.framework */,
+				CE1E4002B2BFBB9CD73331E7 /* Pods_GHFollowersCombineTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29B04C338202741748FE11E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11D8D946F258D6EAC92DF4CD /* Pods-GHFollowersCombine.debug.xcconfig */,
+				EAA6E8F8B0651BE8265CDC01 /* Pods-GHFollowersCombine.release.xcconfig */,
+				DF21AF05D3CDF0A1EF3FFDE7 /* Pods-GHFollowersCombine-GHFollowersCombineUITests.debug.xcconfig */,
+				E411E379CA8C05FFCF07C9CE /* Pods-GHFollowersCombine-GHFollowersCombineUITests.release.xcconfig */,
+				2FFDB0B78DF9D20E8AF193C9 /* Pods-GHFollowersCombineTests.debug.xcconfig */,
+				C75D91697BC4DC6BE75942D0 /* Pods-GHFollowersCombineTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D0A0FABB2505325200C06046 = {
+			isa = PBXGroup;
+			children = (
+				D0A0FAC62505325200C06046 /* GHFollowersCombine */,
+				D0A0FADD2505325300C06046 /* GHFollowersCombineTests */,
+				D0A0FAE82505325300C06046 /* GHFollowersCombineUITests */,
+				D0A0FAC52505325200C06046 /* Products */,
+				29B04C338202741748FE11E7 /* Pods */,
+				00767A227019303C34B2F439 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D0A0FAC52505325200C06046 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0A0FAC42505325200C06046 /* GHFollowersCombine.app */,
+				D0A0FADA2505325300C06046 /* GHFollowersCombineTests.xctest */,
+				D0A0FAE52505325300C06046 /* GHFollowersCombineUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0A0FAC62505325200C06046 /* GHFollowersCombine */ = {
+			isa = PBXGroup;
+			children = (
+				D0A0FAC72505325200C06046 /* AppDelegate.swift */,
+				D0A0FAC92505325200C06046 /* SceneDelegate.swift */,
+				D0A0FACB2505325200C06046 /* ViewController.swift */,
+				D0A0FAD02505325300C06046 /* Assets.xcassets */,
+				D0A0FAD22505325300C06046 /* LaunchScreen.storyboard */,
+				D0A0FAD52505325300C06046 /* Info.plist */,
+			);
+			path = GHFollowersCombine;
+			sourceTree = "<group>";
+		};
+		D0A0FADD2505325300C06046 /* GHFollowersCombineTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0A0FADE2505325300C06046 /* GHFollowersCombineTests.swift */,
+				D0A0FAE02505325300C06046 /* Info.plist */,
+			);
+			path = GHFollowersCombineTests;
+			sourceTree = "<group>";
+		};
+		D0A0FAE82505325300C06046 /* GHFollowersCombineUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D0A0FAE92505325300C06046 /* GHFollowersCombineUITests.swift */,
+				D0A0FAEB2505325300C06046 /* Info.plist */,
+			);
+			path = GHFollowersCombineUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0A0FAC32505325200C06046 /* GHFollowersCombine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0A0FAEE2505325300C06046 /* Build configuration list for PBXNativeTarget "GHFollowersCombine" */;
+			buildPhases = (
+				1F37E92856D087A0BF3FE136 /* [CP] Check Pods Manifest.lock */,
+				D0A0FAC02505325200C06046 /* Sources */,
+				D0A0FAC12505325200C06046 /* Frameworks */,
+				D0A0FAC22505325200C06046 /* Resources */,
+				A9D3C0591090DBAF0938DF82 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GHFollowersCombine;
+			productName = GHFollowersCombine;
+			productReference = D0A0FAC42505325200C06046 /* GHFollowersCombine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0A0FAD92505325300C06046 /* GHFollowersCombineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0A0FAF12505325300C06046 /* Build configuration list for PBXNativeTarget "GHFollowersCombineTests" */;
+			buildPhases = (
+				51B6AB0ACE8C394ABC131669 /* [CP] Check Pods Manifest.lock */,
+				D0A0FAD62505325300C06046 /* Sources */,
+				D0A0FAD72505325300C06046 /* Frameworks */,
+				D0A0FAD82505325300C06046 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0A0FADC2505325300C06046 /* PBXTargetDependency */,
+			);
+			name = GHFollowersCombineTests;
+			productName = GHFollowersCombineTests;
+			productReference = D0A0FADA2505325300C06046 /* GHFollowersCombineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0A0FAE42505325300C06046 /* GHFollowersCombineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0A0FAF42505325300C06046 /* Build configuration list for PBXNativeTarget "GHFollowersCombineUITests" */;
+			buildPhases = (
+				34A1D70486DD4F72696BA1EC /* [CP] Check Pods Manifest.lock */,
+				D0A0FAE12505325300C06046 /* Sources */,
+				D0A0FAE22505325300C06046 /* Frameworks */,
+				D0A0FAE32505325300C06046 /* Resources */,
+				FC5DF031D20B393E1B093903 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0A0FAE72505325300C06046 /* PBXTargetDependency */,
+			);
+			name = GHFollowersCombineUITests;
+			productName = GHFollowersCombineUITests;
+			productReference = D0A0FAE52505325300C06046 /* GHFollowersCombineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0A0FABC2505325200C06046 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Ahmed Ragab";
+				TargetAttributes = {
+					D0A0FAC32505325200C06046 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					D0A0FAD92505325300C06046 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = D0A0FAC32505325200C06046;
+					};
+					D0A0FAE42505325300C06046 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = D0A0FAC32505325200C06046;
+					};
+				};
+			};
+			buildConfigurationList = D0A0FABF2505325200C06046 /* Build configuration list for PBXProject "GHFollowersCombine" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0A0FABB2505325200C06046;
+			productRefGroup = D0A0FAC52505325200C06046 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0A0FAC32505325200C06046 /* GHFollowersCombine */,
+				D0A0FAD92505325300C06046 /* GHFollowersCombineTests */,
+				D0A0FAE42505325300C06046 /* GHFollowersCombineUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0A0FAC22505325200C06046 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A0FAD42505325300C06046 /* LaunchScreen.storyboard in Resources */,
+				D0A0FAD12505325300C06046 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A0FAD82505325300C06046 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A0FAE32505325300C06046 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F37E92856D087A0BF3FE136 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GHFollowersCombine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34A1D70486DD4F72696BA1EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GHFollowersCombine-GHFollowersCombineUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51B6AB0ACE8C394ABC131669 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GHFollowersCombineTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9D3C0591090DBAF0938DF82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GHFollowersCombine/Pods-GHFollowersCombine-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GHFollowersCombine/Pods-GHFollowersCombine-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GHFollowersCombine/Pods-GHFollowersCombine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC5DF031D20B393E1B093903 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GHFollowersCombine-GHFollowersCombineUITests/Pods-GHFollowersCombine-GHFollowersCombineUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GHFollowersCombine-GHFollowersCombineUITests/Pods-GHFollowersCombine-GHFollowersCombineUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GHFollowersCombine-GHFollowersCombineUITests/Pods-GHFollowersCombine-GHFollowersCombineUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0A0FAC02505325200C06046 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A0FACC2505325200C06046 /* ViewController.swift in Sources */,
+				D0A0FAC82505325200C06046 /* AppDelegate.swift in Sources */,
+				D0A0FACA2505325200C06046 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A0FAD62505325300C06046 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A0FADF2505325300C06046 /* GHFollowersCombineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A0FAE12505325300C06046 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A0FAEA2505325300C06046 /* GHFollowersCombineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0A0FADC2505325300C06046 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0A0FAC32505325200C06046 /* GHFollowersCombine */;
+			targetProxy = D0A0FADB2505325300C06046 /* PBXContainerItemProxy */;
+		};
+		D0A0FAE72505325300C06046 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0A0FAC32505325200C06046 /* GHFollowersCombine */;
+			targetProxy = D0A0FAE62505325300C06046 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0A0FAD22505325300C06046 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0A0FAD32505325300C06046 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0A0FAEC2505325300C06046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0A0FAED2505325300C06046 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0A0FAEF2505325300C06046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11D8D946F258D6EAC92DF4CD /* Pods-GHFollowersCombine.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Z6V95G685;
+				INFOPLIST_FILE = GHFollowersCombine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedRagab.GHFollowersCombine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0A0FAF02505325300C06046 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAA6E8F8B0651BE8265CDC01 /* Pods-GHFollowersCombine.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Z6V95G685;
+				INFOPLIST_FILE = GHFollowersCombine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedRagab.GHFollowersCombine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D0A0FAF22505325300C06046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FFDB0B78DF9D20E8AF193C9 /* Pods-GHFollowersCombineTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Z6V95G685;
+				INFOPLIST_FILE = GHFollowersCombineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedRagab.GHFollowersCombineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GHFollowersCombine.app/GHFollowersCombine";
+			};
+			name = Debug;
+		};
+		D0A0FAF32505325300C06046 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C75D91697BC4DC6BE75942D0 /* Pods-GHFollowersCombineTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Z6V95G685;
+				INFOPLIST_FILE = GHFollowersCombineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedRagab.GHFollowersCombineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GHFollowersCombine.app/GHFollowersCombine";
+			};
+			name = Release;
+		};
+		D0A0FAF52505325300C06046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF21AF05D3CDF0A1EF3FFDE7 /* Pods-GHFollowersCombine-GHFollowersCombineUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Z6V95G685;
+				INFOPLIST_FILE = GHFollowersCombineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedRagab.GHFollowersCombineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GHFollowersCombine;
+			};
+			name = Debug;
+		};
+		D0A0FAF62505325300C06046 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E411E379CA8C05FFCF07C9CE /* Pods-GHFollowersCombine-GHFollowersCombineUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Z6V95G685;
+				INFOPLIST_FILE = GHFollowersCombineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedRagab.GHFollowersCombineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GHFollowersCombine;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0A0FABF2505325200C06046 /* Build configuration list for PBXProject "GHFollowersCombine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A0FAEC2505325300C06046 /* Debug */,
+				D0A0FAED2505325300C06046 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0A0FAEE2505325300C06046 /* Build configuration list for PBXNativeTarget "GHFollowersCombine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A0FAEF2505325300C06046 /* Debug */,
+				D0A0FAF02505325300C06046 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0A0FAF12505325300C06046 /* Build configuration list for PBXNativeTarget "GHFollowersCombineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A0FAF22505325300C06046 /* Debug */,
+				D0A0FAF32505325300C06046 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0A0FAF42505325300C06046 /* Build configuration list for PBXNativeTarget "GHFollowersCombineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A0FAF52505325300C06046 /* Debug */,
+				D0A0FAF62505325300C06046 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0A0FABC2505325200C06046 /* Project object */;
+}
