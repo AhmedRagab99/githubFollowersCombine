@@ -16,16 +16,16 @@ class LoginFormViewModel {
     @Published var userName:String = ""
     @Published var password:String = ""
     @Published var confirmPassword:String = ""
-    var userFollowers = PassthroughSubject<[UserModel],Error>()
-    
-    
+    @Published var lodingState = false
+    var userFollowers = PassthroughSubject<[UserModel],ApiError>()
+    var loading = PassthroughSubject<Bool,Never>()
     
     
     var  validateUserName:AnyPublisher<Bool,Never>{
         return $userName
             .map{$0.count >= 3 && !$0.contains("test example for validation") && !$0.isEmpty}
             .eraseToAnyPublisher()
-        }
+    }
     
     var validatePassword:AnyPublisher<Bool,Never>{
         return Publishers.CombineLatest($password,$confirmPassword)
@@ -34,7 +34,7 @@ class LoginFormViewModel {
                 guard password.isEmpty == false , confirmPassword.isEmpty == false else {return false}
                 return true
         }
-      .eraseToAnyPublisher()
+        .eraseToAnyPublisher()
     }
     
     
@@ -43,23 +43,28 @@ class LoginFormViewModel {
             .map{userName,password->Bool in
                 return userName && password
         }
-    .eraseToAnyPublisher()
+        .eraseToAnyPublisher()
     }
     
-    func fetchUser(){
-       let url = URL(string: "\(BASEURL)users/\(userName)/followers")!
-      
-        fetch(url: url) { (result:Result<[UserModel],Error>) in
+    func fetchUser(userName:String){
+        let url = ("\(BASEURL)users/\(userName)/followers")
+
+        Api.fetch(url: url) { (result:Result<[UserModel],ApiError>) in
+            self.loading.send(true)
             switch result{
             case .success(let data):
+                self.loading.send(false)
                 self.userFollowers.send(data)
-            
             case .failure(let error):
+                self.loading.send(false)
+                self.lodingState.toggle()
                 self.userFollowers.send(completion: .failure(error))
+            }
         }
     }
     
+
     
-}
+    
 }
 

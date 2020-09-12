@@ -10,10 +10,14 @@ import UIKit
 
 class FollowersVC:UIViewController{
     
+    
+    var userFollowers = [UserModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .systemBackground
          navigationController?.isNavigationBarHidden = false
+        print(userFollowers.count)
        
 }
+    
 }

@@ -15,17 +15,19 @@ class MainTabBar:UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = .systemGreen
-        createControllers()
-        
+         createControllers()
     }
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
+    }
     
     fileprivate func createControllers(){
         viewControllers = [
-            createNavControllers(for: ViewController(), title: "Favurite", image: UIImage(systemName:"bookmark.fill")!)
-,
-            createNavControllers(for: SearchVC(), title: "Search", image: UIImage(systemName: "magnifyingglass")!)
+            createNavControllers(for: SearchVC(), title: "Search", image: UIImage(systemName: "magnifyingglass")!),
+            createNavControllers(for: SearchVC(), title: "Favurite", image: UIImage(systemName:"bookmark.fill")!)
+
+  
         ]
     }
     

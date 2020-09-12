@@ -21,7 +21,8 @@ class SearchVC:UIViewController{
     var stackView :UIStackView!
     var indicator = UIActivityIndicatorView(style: .large)
     var loginViewModel = LoginFormViewModel()
-
+    var FollowersUsers = [UserModel]()
+    var toFollowersList = false
     
     private var validationSubscriber :Set<AnyCancellable> = []
     
@@ -30,80 +31,74 @@ class SearchVC:UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureLogoImageView()
+        configureTextFields()
         configureStackView()
         configurecallToActionButton()
         dismissTheKeyboared()
         bindTextFieldsToViewModel()
         bindButtonValidationToViewModel()
-        view.addSubview(indicator)
-        print(loginViewModel.userName)
-   
-         
-     
-
-        
-        
-        
+        configureIndicator()
+        NavigateToUserFollowersList()
+        isLoadingSubscriber()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        
     }
-
     
     
     //MARK:View Model binding
-    
-    
     private func getUserFollowersObservers(){
-        loginViewModel.fetchUser()
-         loginViewModel.userFollowers
-             .handleEvents(receiveSubscription: { (_) in
-                 DispatchQueue.main.async {
-                     self.indicator.startAnimating()
-                 }
-             }, receiveCompletion: { (_) in
-                 DispatchQueue.main.async {
-                      self.indicator.stopAnimating()
-                 }
-             }, receiveCancel: {
-                 DispatchQueue.main.async {
-                   self.indicator.stopAnimating()
-                 }
-             })
-             .sink(receiveCompletion: { (resultError) in
-                 print(resultError)
-             }, receiveValue: { (users) in
-                print(users[1].login)
-                 if users.count != 0{
-                 let vc = FollowersVC()
-                 self.navigationController?.pushViewController(vc, animated: true)
-                 }
-                 
-             })
-         
-         .store(in: &validationSubscriber)
-             
-           
+        loginViewModel.fetchUser(userName: userNametextField.text ?? "")
+    }
+    
+    
+    private func isLoadingSubscriber(){
+        loginViewModel.$lodingState.sink { (val) in
+                   val == true ? self.indicator.startAnimating():self.indicator.stopAnimating()
+               }
+           .store(in: &validationSubscriber)
+    }
+    
+    private func NavigateToUserFollowersList(){
+        loginViewModel.userFollowers
+            .sink(receiveCompletion: { error in
+                self.presentGFCAlert(title: "No username found", message: "please try again with a valid username we need to know who to look for😀", buttonTitle: "OK")
+                self.indicator.stopAnimating()
+            }, receiveValue: { [weak self](users) in
+                guard let self = self else{return}
+                self.FollowersUsers = users
+                if self.FollowersUsers.count != 0{
+                    let vc = FollowersVC()
+                    vc.userFollowers = self.FollowersUsers
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else {
+                    self.presentGFCAlert(title: "No username found", message: "please try again with a valid username we need to know who to look for😀", buttonTitle: "OK")
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+            })
+            .store(in: &validationSubscriber)
     }
     
     
     private func bindButtonValidationToViewModel(){
         
         // for the viewModelValidation
-
-              loginViewModel
-                  .validateCredintials
-                  .receive(on: RunLoop.main)
-                  .assign(to: \.isEnabled, on: callToActionButton)
-                 .store(in: &validationSubscriber)
-              
-              // for the ui update
+        
+        loginViewModel
+            .validateCredintials
+            .receive(on: RunLoop.main)
+            .assign(to: \.isEnabled, on: callToActionButton)
+            .store(in: &validationSubscriber)
+        
+        // for the ui update
         
         loginViewModel.validateCredintials
-                        .assignValidationColors(to:callToActionButton)
-                        .store(in:&validationSubscriber)
+            .assignValidationColors(to:callToActionButton)
+            .store(in:&validationSubscriber)
     }
     private func bindTextFieldsToViewModel(){
         // for the viewModelValidation
@@ -113,28 +108,26 @@ class SearchVC:UIViewController{
         
         
         passwordTextField.textPublisher
-                   .assign(to: \.password, on: loginViewModel)
-                   .store(in: &validationSubscriber)
+            .assign(to: \.password, on: loginViewModel)
+            .store(in: &validationSubscriber)
         confirmPasswordTextField.textPublisher
             .assign(to: \.confirmPassword, on: loginViewModel)
-                       .store(in: &validationSubscriber)
-                   configureTextFields()
-        
-            
+            .store(in: &validationSubscriber)
+       
         
         // for the ui update
-
-             loginViewModel.validatePassword
-                 .assignValidationColor(to:userNametextField)
-                 .store(in:&validationSubscriber)
-
-             loginViewModel.validatePassword
-                 .assignValidationColor(to:passwordTextField)
-                .store(in:&validationSubscriber)
-
-             loginViewModel.validatePassword
-                 .assignValidationColor(to:confirmPasswordTextField)
-                  .store(in:&validationSubscriber)
+        
+        loginViewModel.validatePassword
+            .assignValidationColor(to:userNametextField)
+            .store(in:&validationSubscriber)
+        
+        loginViewModel.validatePassword
+            .assignValidationColor(to:passwordTextField)
+            .store(in:&validationSubscriber)
+        
+        loginViewModel.validatePassword
+            .assignValidationColor(to:confirmPasswordTextField)
+            .store(in:&validationSubscriber)
         
     }
     
@@ -142,27 +135,36 @@ class SearchVC:UIViewController{
     
     
     //MARK:- setup Views
-    
-    
+
     private func dismissTheKeyboared(){
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
     }
     
-   
+    private func configureIndicator(){
+        view.addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        loginViewModel.lodingState ? indicator.startAnimating() : indicator.stopAnimating()
+        
+        NSLayoutConstraint.activate([
+            indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            indicator.widthAnchor.constraint(equalToConstant: 50),
+            indicator.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
     
     private func configureTextFields(){
-     
-        
         passwordTextField.placeholder = "Enter your password"
         confirmPasswordTextField.placeholder = "Enter password agian"
         userNametextField.placeholder = " Enter your username"
         userNametextField.delegate = self
         confirmPasswordTextField.delegate = self
-               passwordTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
-   private func configureLogoImageView(){
+    private func configureLogoImageView(){
         
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -184,16 +186,18 @@ class SearchVC:UIViewController{
         self.stackView.distribution = .fillEqually
         self.stackView.spacing = 10
         NSLayoutConstraint.activate([
-            
             self.stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
             self.stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
             self.stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             self.stackView.heightAnchor.constraint(equalToConstant: 150)
         ])
     }
+    
+    
+    
     @objc private func btnTapped(){
         print("tapped")
-    getUserFollowersObservers()
+        getUserFollowersObservers()
     }
     
     private func configurecallToActionButton(){
@@ -204,13 +208,13 @@ class SearchVC:UIViewController{
             callToActionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
             callToActionButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             callToActionButton.heightAnchor.constraint(equalToConstant: 50)
-               ])
+        ])
     }
 }
 
 extension SearchVC:UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-         self.view.endEditing(true)
-              return false
+        self.view.endEditing(true)
+        return false
     }
 }
