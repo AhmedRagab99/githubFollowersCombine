@@ -19,17 +19,18 @@ struct post:Codable{
     let title:String
     let body:String
 }
-
 func request<T: Codable>(_ url: String, method: HTTPMethod = .get, headers: HTTPHeaders? = nil, parameters: Codable? = nil) -> AnyPublisher<Result<T, AFError>, Never> {
     let publisher = AF.request(url, method: method, headers: headers)
         .validate()
         .publishDecodable(type: T.self)
     return publisher.result()
 }
+    var cancels : Set<AnyCancellable> = []
 
 
 class ViewController: UIViewController {
 
+    var indicator = UIActivityIndicatorView(style: .large)
     var tableView = UITableView()
     var tokens :[AnyCancellable] = []
 
@@ -41,17 +42,33 @@ class ViewController: UIViewController {
         }
     }
     
+
+    func activityIndicator() {
+        indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        indicator.style = UIActivityIndicatorView.Style.gray
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        // Add it to the view where you want it to appear
+       
+                
+        // Set up its size (the super view bounds usually)
+       
        // view.backgroundColor = .systemGray3
         // Do any additional s
       
-        tableView.frame = view.bounds
+       activityIndicator()
          tableView.delegate = self
           tableView.dataSource = self
          tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
      
         view.addSubview(tableView)
+       // tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.frame = view.bounds
+         //view.addSubview(activityIndicator)
         
         let url = URL(string: "\(BASEURL)users/AhmedRagab99/followers")!
 //
@@ -62,23 +79,37 @@ class ViewController: UIViewController {
 //        .eraseToAnyPublisher()
 //        .assign(to: \.posts, on: self)
         
-        
-        AF.request("\(BASEURL)users/AhmedRagab99/following")
-            .publishDecodable(type:[UserModel].self,decoder: JSONDecoder())
-            .sink{
-                responce in
-                switch responce.result{
+        fetch(url: url) { (result:Result<[UserModel],Error>) in
+            self.indicator.startAnimating()
 
-                case .success(let r):
-                    self.posts = r
-                    self.tableView.reloadData()
-
-                case .failure(let err):
-                    print(err.localizedDescription)
-                }
+            switch result{
+               
+            case .success(let users):
+                self.indicator.stopAnimating()
+                self.posts = users
+                self.tableView.reloadData()
+            case.failure(let error ):
+        self.indicator.stopAnimating()
+                print(error.localizedDescription)
+            }
         }
-
-      .store(in: &tokens)
+    
+//        AF.request("\(BASEURL)users/AhmedRagab99/following")
+//            .publishDecodable(type:[UserModel].self,decoder: JSONDecoder())
+//            .sink{
+//                responce in
+//                switch responce.result{
+//
+//                case .success(let r):
+//                    self.posts = r
+//                    self.tableView.reloadData()
+//
+//                case .failure(let err):
+//                    print(err.localizedDescription)
+//                }
+//        }
+//
+//      .store(in: &tokens)
         
 
           
