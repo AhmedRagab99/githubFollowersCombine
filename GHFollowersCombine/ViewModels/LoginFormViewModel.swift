@@ -8,7 +8,6 @@
 
 import Combine
 import Foundation
-import Alamofire
 
 
 class LoginFormViewModel {
@@ -16,10 +15,6 @@ class LoginFormViewModel {
     @Published var userName:String = ""
     @Published var password:String = ""
     @Published var confirmPassword:String = ""
-    @Published var lodingState = false
-    var userFollowers = PassthroughSubject<[UserModel],ApiError>()
-    var loading = PassthroughSubject<Bool,Never>()
-    
     
     var  validateUserName:AnyPublisher<Bool,Never>{
         return $userName
@@ -45,26 +40,6 @@ class LoginFormViewModel {
         }
         .eraseToAnyPublisher()
     }
-    
-    func fetchUser(userName:String){
-        let url = ("\(BASEURL)users/\(userName)/followers")
-
-        Api.fetch(url: url) { (result:Result<[UserModel],ApiError>) in
-            self.loading.send(true)
-            switch result{
-            case .success(let data):
-                self.loading.send(false)
-                self.userFollowers.send(data)
-            case .failure(let error):
-                self.loading.send(false)
-                self.lodingState.toggle()
-                self.userFollowers.send(completion: .failure(error))
-            }
-        }
-    }
-    
-
-    
-    
+ 
 }
 

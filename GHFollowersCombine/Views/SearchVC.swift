@@ -19,11 +19,7 @@ class SearchVC:UIViewController{
     let confirmPasswordTextField = GHCTextField()
     let callToActionButton = GFCButton(backgroundColor: .label, title: "Get Followers")
     var stackView :UIStackView!
-    var indicator = UIActivityIndicatorView(style: .large)
     var loginViewModel = LoginFormViewModel()
-    var FollowersUsers = [UserModel]()
-    var toFollowersList = false
-    
     private var validationSubscriber :Set<AnyCancellable> = []
     
     
@@ -37,53 +33,19 @@ class SearchVC:UIViewController{
         dismissTheKeyboared()
         bindTextFieldsToViewModel()
         bindButtonValidationToViewModel()
-        configureIndicator()
-        NavigateToUserFollowersList()
-        isLoadingSubscriber()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+               navigationController?.setNavigationBarHidden(true, animated: true)
+
         
     }
     
     
     //MARK:View Model binding
-    private func getUserFollowersObservers(){
-        loginViewModel.fetchUser(userName: userNametextField.text ?? "")
-    }
-    
-    
-    private func isLoadingSubscriber(){
-        loginViewModel.$lodingState.sink { (val) in
-                   val == true ? self.indicator.startAnimating():self.indicator.stopAnimating()
-               }
-           .store(in: &validationSubscriber)
-    }
-    
-    private func NavigateToUserFollowersList(){
-        loginViewModel.userFollowers
-            .sink(receiveCompletion: { error in
-                self.presentGFCAlert(title: "No username found", message: "please try again with a valid username we need to know who to look for😀", buttonTitle: "OK")
-                self.indicator.stopAnimating()
-            }, receiveValue: { [weak self](users) in
-                guard let self = self else{return}
-                self.FollowersUsers = users
-                if self.FollowersUsers.count != 0{
-                    let vc = FollowersVC()
-                    vc.userFollowers = self.FollowersUsers
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }else {
-                    self.presentGFCAlert(title: "No username found", message: "please try again with a valid username we need to know who to look for😀", buttonTitle: "OK")
-                    self.navigationController?.popViewController(animated: true)
-                }
-                
-            })
-            .store(in: &validationSubscriber)
-    }
-    
-    
+  
     private func bindButtonValidationToViewModel(){
         
         // for the viewModelValidation
@@ -136,24 +98,18 @@ class SearchVC:UIViewController{
     
     //MARK:- setup Views
 
+    
+    private func toFollowersVC(){
+        let vc = FollowersVC()
+        vc.username = self.userNametextField.text ?? ""
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     private func dismissTheKeyboared(){
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
     }
     
-    private func configureIndicator(){
-        view.addSubview(indicator)
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        
-        loginViewModel.lodingState ? indicator.startAnimating() : indicator.stopAnimating()
-        
-        NSLayoutConstraint.activate([
-            indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            indicator.widthAnchor.constraint(equalToConstant: 50),
-            indicator.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    }
+  
     
     private func configureTextFields(){
         passwordTextField.placeholder = "Enter your password"
@@ -197,7 +153,7 @@ class SearchVC:UIViewController{
     
     @objc private func btnTapped(){
         print("tapped")
-        getUserFollowersObservers()
+       toFollowersVC()
     }
     
     private func configurecallToActionButton(){

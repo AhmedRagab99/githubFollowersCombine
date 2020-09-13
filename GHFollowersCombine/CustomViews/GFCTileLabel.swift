@@ -31,7 +31,7 @@ class GFCTitleLabel:UILabel{
     private func configure(){
         textColor = .label
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.9
+        minimumScaleFactor = 0.8
         lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }

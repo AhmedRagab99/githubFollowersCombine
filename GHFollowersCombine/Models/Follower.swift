@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserModel:Codable{
+struct Follower:Codable,Hashable{
     let login:String
-    let avatar_url:String
+    let avatarUrl:String
 }

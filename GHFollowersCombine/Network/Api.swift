@@ -34,20 +34,20 @@ enum ApiError: Error, CustomNSError {
     
 }
  var cansels:Set<AnyCancellable> = []
+   var decoder = JSONDecoder()
 class Api{
     
-    
-    
-  
+
 static func fetch<T:Decodable>(url:String,completion:@escaping (Result<T,ApiError>)->Void){
     
+    decoder.keyDecodingStrategy = .convertFromSnakeCase
     guard let url = URL(string: url) else {
         completion(.failure(ApiError.apiError))
         return
     }
     AF.request(url)
     .validate()
-       .publishDecodable(type:T.self,decoder: JSONDecoder())
+        .publishDecodable(type:T.self,decoder: decoder)
     
         .sink { (responce) in
             switch responce.result{
