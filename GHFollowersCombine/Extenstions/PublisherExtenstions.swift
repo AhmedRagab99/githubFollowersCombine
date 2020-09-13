@@ -12,7 +12,7 @@ import UIKit
 extension AnyPublisher where Output == Bool, Failure == Never {
     func assignValidationColor(to textField: UITextField) -> AnyCancellable {
         return map({ (value) -> UIColor in
-            return value ? UIColor.systemBackground : UIColor.systemRed.withAlphaComponent(0.2)
+            return value ? UIColor.systemBackground : UIColor.systemPink.withAlphaComponent(0.4)
             })
             
             .assign(to: \.backgroundColor, on: textField)

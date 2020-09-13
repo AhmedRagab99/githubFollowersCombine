@@ -79,9 +79,7 @@ class SearchVC:UIViewController{
         
         // for the ui update
         
-        loginViewModel.validatePassword
-            .assignValidationColor(to:userNametextField)
-            .store(in:&validationSubscriber)
+       
         
         loginViewModel.validatePassword
             .assignValidationColor(to:passwordTextField)
