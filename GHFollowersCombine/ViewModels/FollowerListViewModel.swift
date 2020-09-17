@@ -14,7 +14,7 @@ class FollowersListViewModel{
     var userFollowers = PassthroughSubject<[Follower],ApiError>()
     var lodingState = CurrentValueSubject<Bool,Never>(true)
     var loadMore = PassthroughSubject<Bool,Never>()
-    
+    var isSearched = CurrentValueSubject<Bool,Never>(false)
     
     
     func getFollowers(userName:String,page:Int = 1){

@@ -18,9 +18,12 @@ class FollowersVC:UIViewController{
     var followersViewModel = FollowersListViewModel()
     private var subscribers:Set<AnyCancellable> = []
     var userFollowers  = [Follower]()
+    var filterdFollowers = [Follower]()
     var username:String = ""
     var page:Int = 1
     var loadMoreState:Bool = true
+    
+    var isSearch:Bool = false
     
     var indicator = UIActivityIndicatorView(style: .large)
     var collectionView : UICollectionView!
@@ -31,6 +34,7 @@ class FollowersVC:UIViewController{
         configureViewController()
         configureCollectionView()
         configureIndicator()
+        configureSearchBar()
         followersViewModel.getFollowers(userName: username,page: page)
         subscribeToUserFollowers()
         configureDataSource()
@@ -54,6 +58,16 @@ class FollowersVC:UIViewController{
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
     
+    private func configureSearchBar(){
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.placeholder = "Search for a username"
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+    }
+    
     
     private func configureDataSource(){
         dataSource = UICollectionViewDiffableDataSource<Section,Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
@@ -63,11 +77,11 @@ class FollowersVC:UIViewController{
         })
     }
     
-    private func updateData(){
+    private func updateData(on followers:[Follower]){
         
         var snapshot = NSDiffableDataSourceSnapshot<Section,Follower>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(userFollowers)
+        snapshot.appendItems(followers)
         self.dataSource.apply(snapshot, animatingDifferences: true)
         
     }
@@ -90,7 +104,6 @@ class FollowersVC:UIViewController{
     private func configureViewController(){
         self.title = username
         navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
     
     
@@ -141,14 +154,14 @@ class FollowersVC:UIViewController{
                 self.userFollowers.append(contentsOf: users)
                 DispatchQueue.main.async {
                     if self.userFollowers.isEmpty{
-                        let message = "this user has no followers, Go Follow them"
+                        let message = "this user has no followers, Go Follow them😔"
                         self.showEmptyStateView(message: message, in: self.view)
                     }
                     return
                 }
                 
                 //                    print(self.userFollowers.first?.avatarUrl)
-                self.updateData()
+                self.updateData(on: self.userFollowers)
                 
             })
             .store(in: &subscribers)
@@ -167,7 +180,36 @@ extension FollowersVC:UICollectionViewDelegate{
             guard loadMoreState  else {return}
             page+=1
             self.followersViewModel.getFollowers(userName: username, page: page)
-            
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeFollowerArray = followersViewModel.isSearched.value ? filterdFollowers:userFollowers
+        let follower = activeFollowerArray[indexPath.item]
+        
+        let userInfo = UserInfoVC()
+        userInfo.userName = follower.login
+        let navController = UINavigationController(rootViewController: userInfo)
+        navController.modalPresentationStyle = .formSheet
+        present(navController,animated: true)
+        
+        
+    }
+}
+
+
+extension FollowersVC:UISearchBarDelegate,UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text,!filter.isEmpty else {return}
+        filterdFollowers = userFollowers.filter{$0.login.lowercased().contains(filter.lowercased())}
+        updateData(on: filterdFollowers)
+        followersViewModel.isSearched.send(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        updateData(on: userFollowers)
+        followersViewModel.isSearched.send(false)
+    }
+    
+    
 }
