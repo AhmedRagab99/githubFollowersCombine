@@ -27,12 +27,12 @@ class UserInfoViewModel{
                 
                 self.userInfo.send(data)
                 self.lodingState.send( false)
-
-                      // print(data.count)
-                   case .failure(let error):
-                       self.lodingState.send( false)
-                       self.userInfo.send(completion: .failure(error))
-                   }
-               }
+                
+            // print(data.count)
+            case .failure(let error):
+                self.lodingState.send( false)
+                self.userInfo.send(completion: .failure(error))
+            }
+        }
     }
 }

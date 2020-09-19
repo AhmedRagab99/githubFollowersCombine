@@ -30,10 +30,9 @@ class GFCEmptyStateView:UIView{
     }
     
     private func configure(){
-        
-        addSubview(messageLabel)
-        addSubview(logoImageView)
-        
+
+        addSubViews(views: messageLabel,logoImageView)
+      
         messageLabel.numberOfLines = 3
         messageLabel.textColor = .secondaryLabel
         
@@ -41,7 +40,7 @@ class GFCEmptyStateView:UIView{
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             messageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor,constant: -150),
             messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),

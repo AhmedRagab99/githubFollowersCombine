@@ -47,7 +47,7 @@ class FavoriteVC:UIViewController{
         }) { [weak self](favorites) in
             guard let self = self else {return}
             if favorites.count == 0{
-                self.showEmptyStateView(message: "No User Found \n Please add user to your Favorites😀", in: self.view)
+                self.showEmptyStateView(message: "No Users Found \n Please add user to your Favorites😀", in: self.view)
                 self.tableView.isHidden = true
             }
             else {

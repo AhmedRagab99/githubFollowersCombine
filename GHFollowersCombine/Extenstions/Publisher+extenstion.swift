@@ -10,21 +10,22 @@ import Combine
 import UIKit
 
 extension AnyPublisher where Output == Bool, Failure == Never {
+    
     func assignValidationColor(to textField: UITextField) -> AnyCancellable {
         return map({ (value) -> UIColor in
             return value ? UIColor.systemBackground : UIColor.systemPink.withAlphaComponent(0.4)
-            })
-            
+        })
             .assign(to: \.backgroundColor, on: textField)
     }
     
+    
     func assignValidationColors(to View: UIView) -> AnyCancellable {
-           return
+        return
             map({ (value) -> UIColor in
                 return value ? .systemGreen : UIColor.systemGreen.withAlphaComponent(0.2)
-               })
-               .assign(to: \.backgroundColor, on: View)
-       }
+            })
+                .assign(to: \.backgroundColor, on: View)
+    }
 }
 
 

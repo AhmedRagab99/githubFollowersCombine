@@ -14,11 +14,11 @@ enum ItemInfoType {
     case repos,gists,followers,following
 }
 class GFCItemInfoView: UIView {
-
+    
     let SFSymbolImage = UIImageView()
     let titleLabel = GFCTitleLabel(textAlignment: .left, fontsize: 14)
     let countLabel = GFCTitleLabel(textAlignment: .center, fontsize: 14)
-  
+    
     
     
     
@@ -30,12 +30,14 @@ class GFCItemInfoView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
- 
+    
     
     private func configure(){
-        addSubview(SFSymbolImage)
-        addSubview(titleLabel)
-        addSubview(countLabel)
+//        addSubview(SFSymbolImage)
+//        addSubview(titleLabel)
+//        addSubview(countLabel)
+       addSubViews(views: SFSymbolImage,titleLabel,countLabel)
+        
         SFSymbolImage.translatesAutoresizingMaskIntoConstraints = false
         SFSymbolImage.tintColor = .secondaryLabel
         
@@ -55,7 +57,7 @@ class GFCItemInfoView: UIView {
             countLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             countLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             countLabel.heightAnchor.constraint(equalToConstant: 18),
-        
+            
         ])
     }
     
@@ -74,7 +76,7 @@ class GFCItemInfoView: UIView {
         case .following:
             self.SFSymbolImage.image = UIImage(systemName: SFSympols.following)
             self.titleLabel.text = "Following"
-          
+            
         }
     }
     

@@ -11,7 +11,7 @@ import SafariServices
 
 
 fileprivate var  containerView:UIView!
-  fileprivate var activityIndicator = UIActivityIndicatorView(style: .large)
+fileprivate var activityIndicator = UIActivityIndicatorView(style: .large)
 extension UIViewController{
     
     func presentGFCAlert(title:String,message:String,buttonTitle:String){
@@ -24,9 +24,9 @@ extension UIViewController{
     }
     
     func presenSafaryVC(url:URL) {
-           let safaryVC = SFSafariViewController(url: url)
-                 safaryVC.preferredBarTintColor = .systemGreen
-                 self.present(safaryVC,animated: true)
+        let safaryVC = SFSafariViewController(url: url)
+        safaryVC.preferredBarTintColor = .systemGreen
+        self.present(safaryVC,animated: true)
     }
     
     func showEmptyStateView(message:String,in view:UIView){
@@ -35,37 +35,13 @@ extension UIViewController{
         view.addSubview(emptyView)
     }
     
+ 
+}
+extension UIView{
     
-    
-    func showLoadingView(){
-        containerView = UIView(frame: view.bounds)
-        view.addSubview(containerView)
-        containerView.alpha = 0
-        containerView.backgroundColor = .systemBackground
-        
-        UIView.animate(withDuration: 0.25) {
-            containerView.alpha = 0.8
-        }
-        
-        
-      
-        containerView.addSubview(activityIndicator)
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-        ])
-        activityIndicator.startAnimating()
-        
-    }
-    
-    func dismissLoadingView() {
-        DispatchQueue.main.async {
-            
-        
-        containerView.removeFromSuperview()
-            containerView.alpha = 0
-        }
-    }
+     func addSubViews(views:UIView...){
+         for view in views{
+            addSubview(view)
+         }
+     }
 }

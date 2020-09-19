@@ -19,7 +19,7 @@ class GHCTextField:UITextField{
     required init?(coder: NSCoder) {
         fatalError("error here")
     }
-
+    
     
     
     private func configure(){
@@ -35,6 +35,6 @@ class GHCTextField:UITextField{
         minimumFontSize = 12
         backgroundColor = .tertiarySystemBackground
         autocorrectionType = .no
-        returnKeyType = .done
+        returnKeyType = .default
     }
 }

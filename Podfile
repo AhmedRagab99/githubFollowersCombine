@@ -7,7 +7,6 @@ target 'GHFollowersCombine' do
 
   # Pods for GHFollowersCombine
    pod 'Alamofire'
-   pod 'lottie-ios'
    pod 'Kingfisher'
 
   target 'GHFollowersCombineTests' do

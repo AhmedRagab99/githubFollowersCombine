@@ -24,8 +24,8 @@ class FavoritesViewModel{
             switch result{
             case .success(let data):
                 self.favorites.send(data)
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .failure(_):
+                break
             }
         }
     }
@@ -42,26 +42,22 @@ class FavoritesViewModel{
                 let favorite = Follower(login: data.login, avatarUrl: data.avatarUrl)
                 persestanceManger.updateWith(favorite: favorite, actionType: .add) { [weak self](error) in
                     guard let self = self else {return}
-                    
                     if error == .noData{
                         self.isAlertState.value = true
                         self.successState.value = false
                         self.errorSubject.send(.noData)
-                        //   print("error is fail",error)
                         self.errorSubject.send(error!)
                         
                     }
                     else if error == nil {
                         self.isAlertState.value = true
                         self.successState.value = true
-                        // print("error is success",error)
                         self.errorSubject.send(.AuthError)
                     }
                 }
             case .failure(let error):
                 self.successState.value = false
                 self.errorSubject.send(error)
-                print("error is fail in failuer",error)
             }
         }
     }

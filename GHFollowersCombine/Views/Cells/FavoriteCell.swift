@@ -26,15 +26,14 @@ class FavoriteCell:UITableViewCell{
         let urlString =  follower.avatarUrl
         if let url = URL(string: urlString){
             avatarImageView.kf.indicatorType = .activity
-                    let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.4))]
+            let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.4))]
             avatarImageView.kf.setImage(with: .network(url), placeholder: UIImage(named: "avatar-placeholder"),options: options)
         }
     }
     
     private func configure(){
         
-        addSubview(avatarImageView)
-        addSubview(usernameLabel)
+        addSubViews(views: avatarImageView,usernameLabel)
         accessoryType = .disclosureIndicator
         let padding:CGFloat = 12
         NSLayoutConstraint.activate([

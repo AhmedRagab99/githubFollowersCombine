@@ -34,8 +34,8 @@ class FollowerCell:UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
     private func configure(){
-        addSubview(avatarImageView)
-        addSubview(usernameLabel)
+
+        addSubViews(views: avatarImageView,usernameLabel)
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),

@@ -14,7 +14,7 @@ enum persestanceActionType{
 enum persestanceManger{
     static private let defults = UserDefaults.standard
     enum Keys {
-       static let favorites = "favorites"
+        static let favorites = "favorites"
     }
     
     
@@ -35,7 +35,7 @@ enum persestanceManger{
                 }
                 completed(save(favorite: retrivedFavorites))
                 
-            case .failure(let error):
+            case .failure(_):
                 completed(.AuthError)
             }
         }
@@ -68,7 +68,7 @@ enum persestanceManger{
         }catch{
             return ApiError.noData
         }
-}
+    }
     
     
     

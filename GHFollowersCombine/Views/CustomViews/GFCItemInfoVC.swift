@@ -9,8 +9,6 @@
 import UIKit
 
 class GFCItemInfoVC: UIViewController {
-
-    
     
     let stackView = UIStackView()
     let firstItemInfoView = GFCItemInfoView()
@@ -27,18 +25,14 @@ class GFCItemInfoVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layer.cornerRadius = 18
         view.backgroundColor = .secondarySystemBackground
-        
         layoutUI()
         setStackView()
         
     }
-    
-    
     
     
     private func setStackView(){
@@ -49,14 +43,12 @@ class GFCItemInfoVC: UIViewController {
     }
     
     private  func layoutUI(){
-        view.addSubview(stackView)
-        view.addSubview(actionButton)
-        
+        view.addSubViews(views: stackView,actionButton)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         let padding:CGFloat = 20
         
         NSLayoutConstraint.activate([
-        
+            
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
@@ -68,9 +60,5 @@ class GFCItemInfoVC: UIViewController {
             actionButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
-    
-    
-    
-
 
 }
