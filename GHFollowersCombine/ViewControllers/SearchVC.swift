@@ -116,6 +116,8 @@ class SearchVC:UIViewController{
         userNametextField.delegate = self
         confirmPasswordTextField.delegate = self
         passwordTextField.delegate = self
+        passwordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.isSecureTextEntry = true
     }
     
     private func configureLogoImageView(){

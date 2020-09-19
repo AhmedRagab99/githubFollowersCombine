@@ -25,7 +25,7 @@ class MainTabBar:UITabBarController{
     fileprivate func createControllers(){
         viewControllers = [
             createNavControllers(for: SearchVC(), title: "Search", image: UIImage(systemName: "magnifyingglass")!),
-            createNavControllers(for: SearchVC(), title: "Favurite", image: UIImage(systemName:"bookmark.fill")!)
+            createNavControllers(for: FavoriteVC(), title: "Favorites", image: UIImage(systemName:"bookmark.fill")!)
 
   
         ]

@@ -10,6 +10,10 @@
 		24334E6A0B8951760987E2D1 /* Pods_GHFollowersCombine_GHFollowersCombineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F4547DC684D3F57359D2D4 /* Pods_GHFollowersCombine_GHFollowersCombineUITests.framework */; };
 		4AEF65033E7DE5F578BD397C /* Pods_GHFollowersCombineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1E4002B2BFBB9CD73331E7 /* Pods_GHFollowersCombineTests.framework */; };
 		C1E416DB6CCA1D3C1B3CC2E3 /* Pods_GHFollowersCombine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08AFEF15D193F2C2559A3C22 /* Pods_GHFollowersCombine.framework */; };
+		D010B7E7251571720055DD68 /* PersestanceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D010B7E6251571720055DD68 /* PersestanceManger.swift */; };
+		D010B7E9251575820055DD68 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D010B7E8251575820055DD68 /* FavoritesViewModel.swift */; };
+		D010B7EB251579B90055DD68 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D010B7EA251579B90055DD68 /* FavoriteVC.swift */; };
+		D010B7ED251587E40055DD68 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D010B7EC251587E40055DD68 /* FavoriteCell.swift */; };
 		D026B711250839CA002D13FC /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026B710250839CA002D13FC /* Api.swift */; };
 		D039124A2508301600EFE457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03912492508301600EFE457 /* Constants.swift */; };
 		D039124F2508335300EFE457 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039124E2508335300EFE457 /* Follower.swift */; };
@@ -68,6 +72,10 @@
 		43F4547DC684D3F57359D2D4 /* Pods_GHFollowersCombine_GHFollowersCombineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowersCombine_GHFollowersCombineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75D91697BC4DC6BE75942D0 /* Pods-GHFollowersCombineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowersCombineTests.release.xcconfig"; path = "Target Support Files/Pods-GHFollowersCombineTests/Pods-GHFollowersCombineTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE1E4002B2BFBB9CD73331E7 /* Pods_GHFollowersCombineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowersCombineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D010B7E6251571720055DD68 /* PersestanceManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersestanceManger.swift; sourceTree = "<group>"; };
+		D010B7E8251575820055DD68 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		D010B7EA251579B90055DD68 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
+		D010B7EC251587E40055DD68 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		D026B710250839CA002D13FC /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		D03912492508301600EFE457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D039124E2508335300EFE457 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				D026B710250839CA002D13FC /* Api.swift */,
+				D010B7E6251571720055DD68 /* PersestanceManger.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -211,7 +220,7 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
-		D05D18502512E05200F369A1 /* Views */ = {
+		D05D18502512E05200F369A1 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
 				D05CE58E250D7B22001CC492 /* GFAlertVC.swift */,
@@ -220,7 +229,7 @@
 				D0B4FE1E250ED83900EF3154 /* GFCEmptyStateView.swift */,
 				D05D18512512E08000F369A1 /* GFCItemInfoView.swift */,
 			);
-			path = Views;
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		D0A0FABB2505325200C06046 = {
@@ -250,8 +259,8 @@
 				D039124425082F9F00EFE457 /* Network */,
 				D039124D2508334200EFE457 /* Models */,
 				D0BFE995250C157500D84AE0 /* ViewModels */,
-				D0BFE99F250C1C0B00D84AE0 /* CustomViews */,
-				D0BFE996250C158400D84AE0 /* Views */,
+				D0BFE99F250C1C0B00D84AE0 /* Views */,
+				D0BFE996250C158400D84AE0 /* ViewControllers */,
 				D0A0FAC72505325200C06046 /* AppDelegate.swift */,
 				D0A0FAD02505325300C06046 /* Assets.xcassets */,
 				D03912492508301600EFE457 /* Constants.swift */,
@@ -267,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B4FE18250EA63500EF3154 /* FollowerCell.swift */,
+				D010B7EC251587E40055DD68 /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -277,11 +287,12 @@
 				D0BFE9A4250C2DE600D84AE0 /* LoginFormViewModel.swift */,
 				D0B4FE1C250EABAD00EF3154 /* FollowerListViewModel.swift */,
 				D05D18452512B5F700F369A1 /* UserInfoViewModel.swift */,
+				D010B7E8251575820055DD68 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		D0BFE996250C158400D84AE0 /* Views */ = {
+		D0BFE996250C158400D84AE0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				D05D18552512EB8A00F369A1 /* RepoItemVC.swift */,
@@ -289,8 +300,9 @@
 				D0BFE999250C177500D84AE0 /* SearchVC.swift */,
 				D098B178250C555E00E72384 /* FollowersVC.swift */,
 				D05D18432512B35100F369A1 /* UserInfoVC.swift */,
+				D010B7EA251579B90055DD68 /* FavoriteVC.swift */,
 			);
-			path = Views;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D0BFE99B250C1B0300D84AE0 /* Extenstions */ = {
@@ -303,17 +315,17 @@
 			path = Extenstions;
 			sourceTree = "<group>";
 		};
-		D0BFE99F250C1C0B00D84AE0 /* CustomViews */ = {
+		D0BFE99F250C1C0B00D84AE0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D05D18502512E05200F369A1 /* Views */,
+				D05D18502512E05200F369A1 /* CustomViews */,
 				D0B4FE17250EA61800EF3154 /* Cells */,
 				D05D184B2512B9D800F369A1 /* TextFields */,
 				D05D184A2512B9CD00F369A1 /* Buttons */,
 				D05D18492512B9C700F369A1 /* Labels */,
 				D05D18482512B9B600F369A1 /* ImageViews */,
 			);
-			path = CustomViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,10 +579,13 @@
 				D026B711250839CA002D13FC /* Api.swift in Sources */,
 				D0BFE9A7250C360200D84AE0 /* Publisher+extenstion.swift in Sources */,
 				D05CE591250D8160001CC492 /* ViewController+extenstions.swift in Sources */,
+				D010B7EB251579B90055DD68 /* FavoriteVC.swift in Sources */,
 				D05CE58B250D78CA001CC492 /* GFCTileLabel.swift in Sources */,
+				D010B7E7251571720055DD68 /* PersestanceManger.swift in Sources */,
 				D0BFE9A5250C2DE600D84AE0 /* LoginFormViewModel.swift in Sources */,
 				D05CE58D250D7A35001CC492 /* GFBodyLable.swift in Sources */,
 				D05CE58F250D7B22001CC492 /* GFAlertVC.swift in Sources */,
+				D010B7E9251575820055DD68 /* FavoritesViewModel.swift in Sources */,
 				D05052CF2512F3020076DB0A /* String+extenstion.swift in Sources */,
 				D05D18462512B5F700F369A1 /* UserInfoViewModel.swift in Sources */,
 				D05D18582512ECF300F369A1 /* FollowerItemVC.swift in Sources */,
@@ -584,6 +599,7 @@
 				D0BFE9A1250C1C2000D84AE0 /* GHCButton.swift in Sources */,
 				D039124F2508335300EFE457 /* Follower.swift in Sources */,
 				D05D18442512B35100F369A1 /* UserInfoVC.swift in Sources */,
+				D010B7ED251587E40055DD68 /* FavoriteCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

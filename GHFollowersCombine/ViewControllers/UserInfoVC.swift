@@ -12,13 +12,13 @@ import Combine
 
 class UserInfoVC:UIViewController{
     
-    
     var userName:String!
     var userViewModel  = UserInfoViewModel()
     let headerView = UIView()
     let firstView = UIView()
     let secondView = UIView()
     var itemViews = [UIView]()
+    var user:User?
     var indicator = UIActivityIndicatorView(style: .large)
 
     let dateLabel = GFCBodyLabel(textAlignment: .center)
@@ -26,17 +26,12 @@ class UserInfoVC:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureController()
         configureIndicator()
         layoutUI()
-
         userViewModel.getUserData(userName: userName)
-        
         subscribeToUser()
-  
     }
-    
     
     private func isLoadingSubscriber(){
         userViewModel.lodingState.sink { (val) in
@@ -53,15 +48,16 @@ class UserInfoVC:UIViewController{
             }) { (user) in
                 print(user)
                 self.isLoadingSubscriber()
+                self.user = user
                 self.add(childVC: GFCUserInfoHeaderVC(user: user), to: self.headerView)
-                self.add(childVC: RepoItemVC(user: user), to: self.firstView)
-                self.add(childVC: FollowerItemVC(user: user), to: self.secondView)
+                self.add(childVC: RepoItemVC(userViewModel: self.userViewModel, user: user), to: self.firstView)
+                self.add(childVC: FollowerItemVC(userViewModel: self.userViewModel, user: user), to: self.secondView)
                 self.dateLabel.text = "GitHub User Since \(user.createdAt.displayDateInString())"
+          
             }
             .store(in: &subscribers)
             
         }
-    
     
     private func configureController(){
         view.backgroundColor = .systemBackground
@@ -120,6 +116,7 @@ class UserInfoVC:UIViewController{
     }
     
     func add(childVC:UIViewController,to containerView:UIView){
+        print("here")
         addChild(childVC)
         containerView.addSubview(childVC.view)
         childVC.view.frame = containerView.bounds

@@ -35,6 +35,6 @@ class GHCTextField:UITextField{
         minimumFontSize = 12
         backgroundColor = .tertiarySystemBackground
         autocorrectionType = .no
-      
+        returnKeyType = .done
     }
 }
