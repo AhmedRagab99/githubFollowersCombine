@@ -1,4 +1,4 @@
-# githubFollowersCombine 
+# githubFollowersCombine
 ios app let you keep track your githubFollowers
 
 [![Platform](http://img.shields.io/badge/platform-iOS-blue.svg?style=flat)](https://developer.apple.com/iphone/index.action)
